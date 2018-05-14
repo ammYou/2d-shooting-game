@@ -7,6 +7,14 @@ public class Player : MonoBehaviour
 
     IEnumerator Start(){
         spaceship = GetComponent <Spaceship>();
+        
+        // // ○正しい例
+        // // 一時変数に格納
+        // Vector3 pos = transform.eulerAngles;;
+        // // 値を変更
+        // pos.z = 180;
+        // // 代入する
+        // transform.eulerAngles = pos;
 
         while (true)
         {
@@ -33,8 +41,14 @@ public class Player : MonoBehaviour
     }
 
      void OnTriggerEnter2D (Collider2D c){
-        Destroy(c.gameObject);
-        spaceship.Explosion();
-        Destroy(gameObject);   
+        string layerName = LayerMask.LayerToName(c.gameObject.layer);
+        if (layerName == "Bullet (Enemy)"){
+            Destroy(c.gameObject);//弾の削除
+        }
+
+        if( layerName == "Bullet (Enemy)" || layerName == "Enemy"){
+            spaceship.Explosion();//爆発とプレイヤーの削除
+            Destroy(gameObject); 
+        }
     }
 }

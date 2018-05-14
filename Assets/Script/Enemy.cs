@@ -27,4 +27,14 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		string layerName = LayerMask.LayerToName(other.gameObject.layer);
+
+		if (layerName == "Bullet (Player)"){
+			Destroy(other.gameObject);
+			spaceship.Explosion();
+			Destroy(gameObject);
+		}
+	}
 }

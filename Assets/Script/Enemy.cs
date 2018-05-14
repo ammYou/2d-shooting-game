@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour {
 		spaceship = GetComponent <Spaceship>();
 		spaceship.Move (transform.up * -1);
 
-		if (spaceship.canShot){
+		if (!spaceship.canShot){
 			yield break;
 		}
 		while (true)

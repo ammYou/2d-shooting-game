@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
         while (true)
         {
             spaceship.Shot (transform);
-            yield return new WaitForSeconds (0.05f);
+            yield return new WaitForSeconds (spaceship.shotDelay);
         }
     }
 
@@ -30,5 +30,11 @@ public class Player : MonoBehaviour
         // 移動する向きとスピードを代入する
         spaceship.Move (direction);
         
+    }
+
+     void OnTriggerEnter2D (Collider2D c){
+        Destroy(c.gameObject);
+        spaceship.Explosion();
+        Destroy(gameObject);   
     }
 }

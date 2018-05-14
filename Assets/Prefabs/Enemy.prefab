@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 50897467997861292}
   - component: {fileID: 114493774892479874}
   - component: {fileID: 114203639497519552}
+  - component: {fileID: 60340751400438498}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -151,6 +152,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &60340751400438498
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410889240882612}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.96}
+    newSize: {x: 0.96, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22697592, y: 0.29602385}
+      - {x: -0.20802009, y: 0.29902363}
+      - {x: -0.21381965, y: -0.08910537}
+      - {x: -0.17203012, y: -0.23101902}
+      - {x: 0.13000834, y: -0.2400167}
+      - {x: 0.2350125, y: -0.07502937}
 --- !u!95 &95860209076000566
 Animator:
   serializedVersion: 3
@@ -183,6 +214,7 @@ MonoBehaviour:
   speed: 0.5
   shotDelay: 0.3
   bullet: {fileID: 100000, guid: e1acff58bbd994502b0c5aa6088260f6, type: 2}
+  explosion: {fileID: 1117180284646384, guid: 2177bf944d1998144b662d600a06a50c, type: 2}
   canShot: 1
 --- !u!114 &114493774892479874
 MonoBehaviour:

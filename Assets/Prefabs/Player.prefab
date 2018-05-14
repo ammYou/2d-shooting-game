@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95371504387573464}
   - component: {fileID: 50451782048225986}
   - component: {fileID: 114433491303937544}
+  - component: {fileID: 114922155603008982}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -92,8 +93,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7eecae8a5720d4fb5da45b593b2b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114922155603008982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846504905399302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a296b33c133cf16488f5a155ae77e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 5
-  bullet: {fileID: 0}
+  shotDelay: 0.05
+  bullet: {fileID: 1402921641678370, guid: ce19e5c0037ea6542a515f6a421d3962, type: 2}
+  canShot: 0
 --- !u!212 &212056508222890674
 SpriteRenderer:
   m_ObjectHideFlags: 1

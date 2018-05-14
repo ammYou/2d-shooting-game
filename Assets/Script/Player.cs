@@ -3,14 +3,14 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-    // 移動スピード
-    public float speed = 5;
-    public GameObject bullet;
+    Spaceship spaceship;
 
     IEnumerator Start(){
+        spaceship = GetComponent <Spaceship>();
+
         while (true)
         {
-            Instantiate (bullet, transform.position, transform.rotation);
+            spaceship.Shot (transform);
             yield return new WaitForSeconds (0.05f);
         }
     }
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         Vector2 direction = new Vector2 (x, y).normalized;
         
         // 移動する向きとスピードを代入する
-        GetComponent<Rigidbody2D>().velocity = direction * speed;
+        spaceship.Move (direction);
         
     }
 }

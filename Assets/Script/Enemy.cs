@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	IEnumerator Start () {
 		spaceship = GetComponent <Spaceship>();
-		spaceship.Move (transform.up * -1);
+		Move (transform.up * -1);
 
 		if (!spaceship.canShot){
 			yield break;
@@ -22,9 +22,16 @@ public class Enemy : MonoBehaviour {
 			yield return new WaitForSeconds (spaceship.shotDelay);
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    public void Move(Vector2 direction)
+    {
+        GetComponent<Rigidbody2D>().velocity = direction * spaceship.speed;
+    }
+
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
